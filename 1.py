@@ -22,11 +22,13 @@ def hsh_b(pth,type="md5",block_size=1024*1024,bg_size=256*1024):
 # 76fc6c2b0f984432e3407535c8d7f3c0#e5febdb4176dc043b89b1cc3db36c270#1150934733#loki1.mp4
 # pth=r'C:\All\Down\loki1.mp4'
 
-pth=sys.argv[1] if len(sys.argv)>1 else input()
-_l=hsh_b(pth)
-_ll=[str(i) for i in [_l[1],_l[0],os.path.getsize(pth),os.path.basename(pth)]]
-ans='#'.join(_ll)
+_sys_argv_1=sys.argv[1] if len(sys.argv)>1 else input()
 
-print(ans)
-input()
+while True:
+	pth=_sys_argv_1
+	_l=hsh_b(pth)
+	_ll=[str(i) for i in [_l[1],_l[0],os.path.getsize(pth),os.path.basename(pth)]]
+	ans='#'.join(_ll)
+	print(ans)
+	_sys_argv_1=input()
 
